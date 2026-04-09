@@ -18,6 +18,20 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "😋😋查看任务状态 ${{ job.status }}."
+      # 新增：设置 Node.js 环境
+      - name: 设置 Node.js 环境
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: 下载依赖
+        run: pnpm install
+
       - name: 开始构建
-      - run: pnpm build
+        run: pnpm build
       - run: echo "🥰🥰构建完成."
