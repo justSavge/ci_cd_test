@@ -11,11 +11,13 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 触发事件 ${{ github.event_name }} ."
-      - name: Check out repository code
+      - run: echo "☝🏻🤓 触发事件 ${{ github.event_name }} ."
+      - name: 检出代码
         uses: actions/checkout@v5
-      - run: echo "💡  ${{ github.repository }} 已复制."
-      - name: List files in the repository
+      - name: 列出仓库的文件
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 查看任务状态 ${{ job.status }}."
+      - run: echo "😋😋查看任务状态 ${{ job.status }}."
+      - name: 开始构建
+      - run: pnpm build
+      - run: echo "🥰🥰构建完成."
