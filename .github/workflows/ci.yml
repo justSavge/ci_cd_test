@@ -7,15 +7,15 @@ on:
       - master
 
 # 任务：目前只有构建一个任务
-job:
+jobs:
   Explore-GitHub-Actions:
-  runs-on: ubuntu-latest
-  steps:
-    - run: echo "🎉 触发事件 ${{ github.event_name }} ."
-    - name: Check out repository code
-      uses: actions/checkout@v5
-    - run: echo "💡  ${{ github.repository }} 已复制."
-    - name: List files in the repository
-      run: |
-        ls ${{ github.workspace }}
-    - run: echo "🍏 查看任务状态 ${{ job.status }}."
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 触发事件 ${{ github.event_name }} ."
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - run: echo "💡  ${{ github.repository }} 已复制."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 查看任务状态 ${{ job.status }}."
